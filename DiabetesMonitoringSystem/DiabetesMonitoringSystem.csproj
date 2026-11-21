@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27E548FD-C23C-4AEB-AB37-61C84A19A63D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DiabetesMonitoringSystem</RootNamespace>
+    <AssemblyName>DiabetesMonitoringSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CareController.cs" />
+    <Compile Include="Models\CareRepository.cs" />
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRepository.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Views\AdminDashboardForm.Designer.cs">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DoctorAppointmentsForm.Designer.cs">
+      <DependentUpon>DoctorAppointmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorAppointmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DoctorDashboardForm.Designer.cs">
+      <DependentUpon>DoctorDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMessages.cs" />
+    <Compile Include="Views\GlucoseHistoryForm.Designer.cs">
+      <DependentUpon>GlucoseHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GlucoseHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PatientAssignmentsForm.Designer.cs">
+      <DependentUpon>PatientAssignmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientAssignmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PatientDashboardForm.Designer.cs">
+      <DependentUpon>PatientDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RecordGlucoseForm.Designer.cs">
+      <DependentUpon>RecordGlucoseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecordGlucoseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserAccountsForm.Designer.cs">
+      <DependentUpon>UserAccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.6.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\GlucoseHistoryForm.resx">
+      <DependentUpon>GlucoseHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserAccountsForm.resx">
+      <DependentUpon>UserAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
